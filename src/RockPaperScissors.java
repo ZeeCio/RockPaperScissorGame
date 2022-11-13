@@ -4,9 +4,8 @@ import java.util.Scanner;
 
 public class RockPaperScissors {
 
-    public static void main(String[] args) {
-
-        // Array holding int values representing rock-1,paper-2,scissors-3
+    public static void playGame() {
+        // Array holding int values representing rock-1,paper-2,scissors-3 - for computer choice
         int[] choice = {1, 2, 3};
 
         // variables holding scores - user and pc points
@@ -18,7 +17,7 @@ public class RockPaperScissors {
 
         // Welcome message
         System.out.println("     Hey, Lets play     \n *** Rock-Paper-Scissors ***");
-        System.out.println("How many rounds you want to play? (1 - 10 allowed) :");
+        System.out.println("How many rounds you want to play? (1 - 10 allowed):");
 
         // User inputs how many rounds want to play
         int userRounds = scan.nextInt();
@@ -82,6 +81,20 @@ public class RockPaperScissors {
             System.out.println(" It's a draw." + userPoints + " --- " + pcPoints);
         } // End of if - points comparison to determine winner
 
+    }
+
+    public static void main(String[] args) {
+
+        boolean playAgain = true;
+        Scanner scan = new Scanner(System.in);
+
+        do {
+            playGame();
+            System.out.println("Would you like to play again? Yes/No");
+            playAgain = scan.nextLine().trim().equalsIgnoreCase("yes");
+        } while (playAgain);
+
     } // End of main
 
 } // End of class
+
