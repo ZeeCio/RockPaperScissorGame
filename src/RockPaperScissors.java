@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-public class RockPaperScissorsGame {
+public class RockPaperScissors {
 
     public static void main(String[] args) {
 
@@ -67,7 +67,7 @@ public class RockPaperScissorsGame {
                     System.out.println("You can play 1 to 10 rounds. Try again: ");
                 }
 
-           } // End of for loop - rounds loop
+            } // End of for loop - rounds loop
 
             userRounds--;                        // decreasing rounds count
             System.out.println("Rounds left: " + userRounds);
