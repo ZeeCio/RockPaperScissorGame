@@ -6,25 +6,29 @@ public class RockPaperScissorsGame {
 
     public static void main(String[] args) {
 
+        // Array holding int values representing rock-1,paper-2,scissors-3
         int[] choice = {1, 2, 3};
 
+        // variables holding scores - user and pc points
         int userPoints = 0;
         int pcPoints = 0;
+
+        // Scanner for obtaining inputs
         Scanner scan = new Scanner(System.in);
 
-
+        // Welcome message
         System.out.println("     Hey, Lets play     \n *** Rock-Paper-Scissors ***");
         System.out.println("How many rounds you want to play? (1 - 10 allowed) :");
+
+        // User inputs how many rounds want to play
         int userRounds = scan.nextInt();
 
-
+        // while rounds in range  -> get user choice input and random pc choice from array-choice
         while (userRounds <= 10 && userRounds > 0) {
             System.out.println("What do you choose?Type 0 for Rock, 1 for Paper or 2 for Scissors.");
             int userInput = scan.nextInt();
             int pcChoiceIndex = new Random().nextInt(choice.length);
             int computerChoice = choice[pcChoiceIndex];
-
-
 
     /*
     Paper 2 wraps Rock 1 to win
@@ -32,10 +36,10 @@ public class RockPaperScissorsGame {
     Rock 1 breaks Scissors 3 to win
     3 > 2 > 1
     */
-
-
+            // Loop through rounds quantity
             for (int i = 1; i < userRounds; i++) {
 
+                // Comparing user and pc choice - adding points to winner and decreasing rounds count
                 if (userInput >= 3 || userInput < 0) {
                     System.out.println("You typed an invalid number, you lose a point!");
                     pcPoints++;
@@ -64,10 +68,12 @@ public class RockPaperScissorsGame {
                 }
 
            } // End of for loop - rounds loop
-            userRounds--;
+
+            userRounds--;                        // decreasing rounds count
             System.out.println("Rounds left: " + userRounds);
         } //End of while - rounds range check
 
+        // Comparing scores to find out who is the winner
         if (userPoints > pcPoints) {
             System.out.println("You win with " + userPoints + " points.");
         } else if (userPoints < pcPoints) {
