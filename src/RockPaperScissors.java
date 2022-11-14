@@ -88,6 +88,7 @@ public class RockPaperScissors {
         boolean playAgain = true;
         Scanner scan = new Scanner(System.in);
 
+        // do-while loop - do playGame() method while user input is "yes", if else - will set playAgain= false
         do {
             playGame();
             System.out.println("Would you like to play again? Yes/No");
