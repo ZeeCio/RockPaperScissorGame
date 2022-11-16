@@ -24,7 +24,7 @@ public class RockPaperScissors {
 
         // while rounds in range  -> get user choice input and random pc choice from array-choice
         while (userRounds <= 10 && userRounds > 0) {
-            System.out.println("What do you choose?Type 0 for Rock, 1 for Paper or 2 for Scissors.");
+            System.out.println("What do you choose?Type 1 for Rock, 2 for Paper or 3 for Scissors.");
             int userInput = scan.nextInt();
             int pcChoiceIndex = new Random().nextInt(choice.length);
             int computerChoice = choice[pcChoiceIndex];
@@ -95,6 +95,7 @@ public class RockPaperScissors {
             playAgain = scan.nextLine().trim().equalsIgnoreCase("yes");
         } while (playAgain);
 
+        System.out.println("Thanks for playing!");
     } // End of main
 
 } // End of class
